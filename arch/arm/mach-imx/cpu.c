@@ -184,6 +184,9 @@ int print_cpuinfo(void)
 	u32 cpurev;
 	__maybe_unused u32 max_freq;
 
+    printf("\nu-boot proper start marker. timer counter = %ul", timer_read_counter());
+	printf("\nno of ticks per second= %ul", get_tbclk());
+
 	cpurev = get_cpu_rev();
 
 #if defined(CONFIG_IMX_THERMAL)

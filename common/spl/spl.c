@@ -593,6 +593,9 @@ void preloader_console_init(void)
 	puts("\nU-Boot SPL " PLAIN_VERSION " (" U_BOOT_DATE " - " \
 			U_BOOT_TIME " " U_BOOT_TZ ")\n");
 #endif
+	printf("\n u-boot spl start timer counter = %ul", timer_read_counter());
+	printf("\n u-boot spl start timer: no of ticks per second= %ul", get_tbclk());
+	
 #ifdef CONFIG_SPL_DISPLAY_PRINT
 	spl_display_print();
 #endif

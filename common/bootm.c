@@ -728,6 +728,9 @@ int do_bootm_states(cmd_tbl_t *cmdtp, int flag, int argc, char * const argv[],
 		return ret;
 	}
 
+    printf("\n u-boot proper end phase: (just before booting kernel) timer counter = %ul", timer_read_counter());
+	printf("\n no of ticks per second= %ul", get_tbclk());	
+	
 	/* Now run the OS! We hope this doesn't return */
 	if (!ret && (states & BOOTM_STATE_OS_GO))
 		ret = boot_selected_os(argc, argv, BOOTM_STATE_OS_GO,

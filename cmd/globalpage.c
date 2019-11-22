@@ -65,6 +65,9 @@ int globalpage_add(char* const arg)
 	memcpy(global_page->mac_entry[mac].mac, mac_id, 6);
 	printf("Stashed %s = %02x:%02x:%02x:%02x:%02x:%02x\n", arg,
 	mac_id[5], mac_id[4], mac_id[3], mac_id[2], mac_id[1], mac_id[0]);
+	
+	printf("\nu-boot proper phase- globalpage_add(part of running config command.) timer counter = %ul", timer_read_counter());
+	printf("\n no of ticks per second= %ul", get_tbclk());
 	return 0;
 }
 
